@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <title>Desafio 17 Dias</title>
+    <style>
+        body {
+            --main-color: #cc66ff;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('imgs/bg2.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        header {
+            background-color: var(--main-color);;
+            padding: 0.1px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #ffffff;
+            font-size: 24px;
+        }
+
+        #title {
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px; /* Adjust as needed */
+            color:white;
+        }
+
+        .title-purple {
+            color: white;
+            display: inline-block; /* Change to block if you want it to behave like a block-level element */
+            background-color: var(--main-color); /* Set your desired background color */
+            padding: 5px; /* Adjust padding as needed */
+            border-radius: 1px; /* Optional: Add rounded corners */
+        }
+
+        #video-container {
+            text-align: center;
+        }
+
+        .button-container {
+            text-align: center;
+            display: none; /* Initially hide the button */
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+        button {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px 40px;
+            font-size: 16px;
+            background-color: var(--main-color);; /* Green background color */
+            color: black;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        button:hover {
+            color: white; /* Darker green on hover */
+        }
+
+        #white-section {
+            margin-top: 150px;
+            background-color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #titleWhite {
+            color: var(--main-color);
+            font-size: 40px;
+        }
+
+        #imgWhite {
+            width: 40%;
+        }
+
+        #imgWhite2 {
+            width: 65%;
+        }
+
+        footer {
+            background-color: var(--main-color);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .footerText {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            text-align: center;
+            margin: auto;
+            padding: 10px;
+            color: white;
+            width: 50%;
+        }
+
+        #copyright {
+            font-size: 20px
+        }
+
+        a {
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <p>ATENÇÃO: Não saia dessa página, você não terá uma oportunidade dessa outra vez!</p>
+    </header>
+
+    <h1 id="title"><span class="title-purple">DESCUBRA AGORA:</span> UM MÉTODO TOTALMENTE NATURAL PARA PROMOVER A PERDA DE GORDURA LOCALIZADA <span class="title-purple">DE FORMA SAUDÁVEL!</span></h1>
+
+    <div id="video-container">
+        <iframe width="700" height="394" src="https://www.youtube.com/embed/6fI80YpXx3E" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="button-container">
+        <button onclick="window.location.href='https://google.com'">SIM, EU QUERO PERDER GORDURA LOCALIZADA E EMAGRECER!</button>
+    </div>
+
+    <div id="white-section">
+        <h1 id="titleWhite"><span class="title-purple">5 ESTÁGIOS TRANSFORMADORES</span> NOS PRÓXIMOS 19 DIAS:</h1>
+        <img src="imgs/passos.png" id="imgWhite">
+        <div class="button-container">
+            <button onclick="window.location.href='https://google.com'">SIM, EU QUERO PERDER GORDURA LOCALIZADA E EMAGRECER!</button>
+        </div>
+
+        <h1 id="titleWhite"><span class="title-purple">PROGRAMA DE REEDUCAÇÃO ALIMENTAR</span> QUE PODE TE AJUDAR A CONQUISTAR <span class="title-purple">RESULTADOS EXTRAORDINÁRIOS</span></h1>
+        <img src="imgs/second.png" id="imgWhite2">
+        <div class="button-container">
+            <button onclick="window.location.href='https://google.com'">SIM, EU QUERO PERDER GORDURA LOCALIZADA E EMAGRECER!</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerText">AVISO LEGAL: Todas as sugestões e conceitos apresentados aqui têm como objetivo apenas informar e educar. Este site foi disponibilizado com esse objetivo e não tem intenção nenhuma de servir como orientação médica, prescrição ou substituir diagnósticos de profissionais. Nenhuma informação desta página ou deste produto substitui uma consulta com seu médico, nutricionista ou um personal. É importante o acompanhamento profissional para qualquer mudança na alimentação ou estilo de vida alimentar. É só ele quem poderá avaliar de perto a sua situação atual e decidir se você está apto(a) ou não à essas alterações. Para mais informações, acesse aqui nossos <a href="termos.html">Termos de Uso</a> e <a href="privacidade.html">Política de Privacidade</a>. Tenha em mente que os resultados aqui apresentados não garantem que você terá os mesmo resultados, isso depende e varia do organismo de cada pessoa e da determinação em seguir as sugestões propostas e ter resultados.
+            <br> <h1 id="copyright">Copyright Desafio 17 Dias © 2024 - Todos os direitos reservados.</h1>
+        </div>
+        
+    </footer>
+
+    <script>
+        setTimeout(function() {
+            for (i = 0; document.getElementsByClassName('button-container').length; i++) {
+                document.getElementsByClassName('button-container')[i].style.display = "block";
+            }
+        }, 30000);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<meta charset="UTF-8">
+<style><!--
+body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      font-size: 20px;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #333;
+      display: inline;
+    }
+    h2 {
+      color: #333;
+    }
+    button {
+      font-size: 28px;
+      margin: 30px;
+      padding: 40px 80px;
+      cursor: pointer;
+      background-color: #e77dff;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 5px;
+    }
+    .itens-esquerda {
+        text-align: left;
+        margin-left: 25px;
+        margin-right: 25px
+    }
+    #item4 {
+        margin-top: 50px;
+        font-weight: bold;
+    } 
+    #tit {
+        font-weight: bold;
+    }
+    #tudo {
+        background-color: #e77dff;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px; /* margem de 10 pixels em todos os lados */
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+--></style>
+<body onload="setup()">
+    <img src="comendosaudavel.jpeg" alt="imagem" id="imageok"/>
+    <br> <br>
+    <h1 id="questionname">Questão </h1>
+    <h1 id="qnum">1</h1>
+    <br> <br>
+    <h2 id="question">Você está fazendo dieta ou conhece alguém que está?</h2>
+    <br>
+    <button onclick="nextQuestion()">SIM</button>
+    <button onclick="nextQuestion()">NÃO</button>
+    <button class="oButton" style="display: none;" onclick="nextQuestion()">10 kg</button>
+    <button class="oButton" style="display: none;" onclick="nextQuestion()">20 kg</button>
+    <button class="oButton" style="display: none;" onclick="nextQuestion()">30 kg ou mais</button>
+    <button class="oButton" style="display: none;" onclick="nextQuestion()"></button>
+    <div id="tudo" style="display: none; height: fit-content; width: fit-content;">
+        <p id="tit">Parabéns! Antes de assistir à apresentação onde compartilhamos o método, pedimos gentilmente que cada pessoa aceite nossos três termos de uso.</p>
+        <p class="itens-esquerda">- Por favor, compartilhe esta apresentação com qualquer AMIGA que tenha interesse em aprimorar sua saúde.</p>
+        <p class="itens-esquerda">- Não aplique este método de forma indiscriminada. Utilize-o seguindo corretamente os passos, preferencialmente com a orientação de um profissional de saúde.</p>
+        <p class="itens-esquerda">- Esta apresentação estará disponível por tempo limitado, e nosso servidor permite apenas 100 pessoas simultaneamente. Se você optar por não utilizar sua vaga, por favor, feche o navegador AGORA para que outra mulher na lista de espera possa aproveitar essa oportunidade.</p>
+        <p id="item4">Se estiver de acordo com todos os termos acima, clique no botão "Eu Concordo" para assistir a esta apresentação privada.</p>
+    </div>
+    <button id="finalButton" style="display: none;" onclick="redirectToAnotherPage()">EU CONCORDO</button>
+</body>
+<script>
+    var currentQuestion = 1;
+
+    function setup() {
+        document.getElementById('imageok').width = 400;
+    }
+
+    function nextQuestion() {
+      var questionElement = document.getElementById('question');
+      var eita = document.getElementById('qnum');
+      var img = document.getElementById('imageok');
+      var question = document.getElementById('questionname');
+      var tudo = document.getElementById('tudo');
+
+      switch (currentQuestion) {
+        case 1:
+            img.src = "carnesaudaveis.jpg";
+            questionElement.textContent = 'Você já tentou fazer dietas malucas ou reeducação alimentar antes?';
+            break;
+        case 2:
+            img.src = "imagemm.png";
+            questionElement.textContent = 'Você gostaria de aprender um novo método para perca de peso de forma caseira para perder gordura?';
+            break;
+        case 3:
+            img.src = "perdadepeso.png";
+            questionElement.textContent = 'Quantos kg voce gostaria de perder?';
+            document.getElementsByTagName('button')[0].style.display = 'none';
+            document.getElementsByTagName('button')[1].style.display = 'none';
+            for (let i = 0; i < document.getElementsByClassName('oButton').length-1; i++) {
+                    document.getElementsByClassName('oButton')[i].style.display = 'inline';
+            }
+            break;
+        case 4:
+            img.src = "geracao.jpeg";
+            questionElement.textContent = 'Quantos anos você tem?';
+            document.getElementsByClassName('oButton')[3].style.display = 'inline';
+            document.getElementsByClassName('oButton')[0].textContent = "18 anos ou menos";
+            document.getElementsByClassName('oButton')[1].textContent = "19 a 25 anos";
+            document.getElementsByClassName('oButton')[2].textContent = "26 a 40 anos";
+            document.getElementsByClassName('oButton')[3].textContent = "41 anos ou mais";
+            break;
+        case 5:
+            img.src = "mulherhomemcorrendo.jpg";
+            questionElement.textContent = 'Por qual motivo você gostaria de perder peso?';
+            document.getElementsByClassName('oButton')[0].textContent = "Melhorar minha saúde";
+            document.getElementsByClassName('oButton')[1].textContent = "Melhorar minha autoestima e segurança";
+            document.getElementsByClassName('oButton')[2].textContent = "Agradar meu/minha parceiro/parceira e melhorar a relação";
+            document.getElementsByClassName('oButton')[3].textContent = "Para ir viajar";
+            break;
+        case 6:
+            for (let i = 0; i < document.getElementsByClassName('oButton').length; i++) {
+                    document.getElementsByClassName('oButton')[i].style.display = 'none';
+            }
+            img.src = "academiasalada.jpg";
+            questionElement.textContent = 'Você esta disposta a ter disciplina e ir de cabeça no nosso curso de como emagrecer?';
+            document.getElementsByTagName('button')[0].style.display = 'inline';
+            document.getElementsByTagName('button')[1].style.display = 'inline';
+            break;
+        case 7:
+            eita.style.display = "none";
+            questionElement.textContent = 'Descubra como essa recente inovação científica pode influenciar positivamente a sua saúde. Para verificar se isso pode beneficiar você, preencha o teste rápido abaixo:';
+            questionElement.style.fontSize = "20px";
+            question.textContent = 'Parabéns! Com base nas suas respostas, você está qualificada.';
+            tudo.style.display = "block";
+            document.getElementsByTagName('button')[0].style.display = 'none';
+            document.getElementsByTagName('button')[1].style.display = 'none';
+            document.getElementById('finalButton').style.display = 'inline';
+            break;
+      }
+
+      currentQuestion++;
+      if (currentQuestion > 7) {
+        currentQuestion = 7;
+      }
+      eita.textContent = currentQuestion.toString();
+    }
+
+    function redirectToAnotherPage() {
+      window.location.href = 'outro.html';
+    }
+  </script>
